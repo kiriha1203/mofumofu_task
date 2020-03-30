@@ -31,6 +31,8 @@
         <%= link_to '編集', edit_property_path(property) %>
       </td>
       <td>
+        <%= link_to '削除', property, method: :delete,
+                    data: { confirm: "物件「#{property.name}」を削除します。よろしいですか？ "} %>
       </td>
       <% end %>
   </tr>

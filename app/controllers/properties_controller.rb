@@ -25,9 +25,14 @@ class PropertiesController < ApplicationController
   def update
     property = Property.find(params[:id])
     property.update!(property_params)
-    redirect_to properties_url, notice: "物件「#{property.name}」を削除しました。"
+    redirect_to properties_url, notice: "物件「#{property.name}」を更新しました。"
   end
 
+  def destroy
+    property = Property.find(params[:id])
+    property.destroy
+    redirect_to properties_url, notice: "物件「#{property.name}」を削除しました。"
+  end
   private
 
   def property_params
