@@ -1,13 +1,17 @@
 class PropertiesController < ApplicationController
+  before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def new
     @property = Property.new
   end
 
   def create
-    property = Property.new(property_params)
-    property.save
-    redirect_to properties_url, notice: "物件「#{property.name}」を登録しました。"
+    @property = Property.new(property_params)
+    if @property.save
+      redirect_to @property, notice:"物件「#{@property.name}」を登録しました。"
+    else
+      render :new
+    end
   end
 
   def index
@@ -15,21 +19,20 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @property = Property.find(params[:id])
   end
 
   def edit
-    @property = Property.find(params[:id])
   end
 
   def update
-    property = Property.find(params[:id])
-    property.update!(property_params)
-    redirect_to properties_url, notice: "物件「#{property.name}」を更新しました。"
+    if @property.update(property_params)
+      redirect_to properties_url, notice: "物件「#{property.name}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
-    property = Property.find(params[:id])
     property.destroy
     redirect_to properties_url, notice: "物件「#{property.name}」を削除しました。"
   end
@@ -39,4 +42,7 @@ class PropertiesController < ApplicationController
     params.require(:property).permit(:name, :rent, :address, :age, :remarks)
   end
 
+  def set_property
+    @property = Property.find(params[:id])
+  end
 end
