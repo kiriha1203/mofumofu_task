@@ -18,6 +18,16 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
   end
 
+  def edit
+    @property = Property.find(params[:id])
+  end
+
+  def update
+    property = Property.find(params[:id])
+    property.update!(property_params)
+    redirect_to properties_url, notice: "物件「#{property.name}」を削除しました。"
+  end
+
   private
 
   def property_params

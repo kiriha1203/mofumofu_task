@@ -1,46 +1,5 @@
-<h1>登録</h1>
-
 <h1>物件登録</h1>
 
-<%= form_with model: @property, local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <br>
-    <%= f.text_field :name, class: 'form-control', id: 'property_name' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :rent %>
-    <br>
-    <%= f.number_field :rent, class: 'form-control', id: 'property_rent' %>
-  </div>  <div class="form-group">
-    <%= f.label :address %>
-    <br>
-    <%= f.text_field :address, class: 'form-control', id: 'property_address' %>
-  </div>  <div class="form-group">
-    <%= f.label :age %>
-    <br>
-    <%= f.number_field :age, class: 'form-control', id: 'property_age' %>
-  </div>  <div class="form-group">
-    <%= f.label :remark %>
-    <br>
-    <%= f.text_area :remarks, rows: 5,  class: 'form-control', id: 'property_remark' %>
-  </div>
-
-
-<!--  <div class="form-group">-->
-    <%#= f.label :route_name %>
-    <%#= f.text_field :route_name, class: 'form-control', id: 'place_route_name' %>
-<!--  </div>-->
-<!--  <div class="form-group">-->
-    <%#= f.label :station_name %>
-    <%#= f.text_field :station_name, class: 'form-control', id: 'place_station_name' %>
-<!--  </div> -->
-<!--  <div class="form-group">-->
-    <%#= f.label :distance %>
-    <%#= f.text_field :distance, class: 'form-control', id: 'place_distance' %>
-<!--  </div>-->
-
-  <%= f.submit nil %>
-<% end %>
+<%= render partial: 'form', locals: { property: @property } %>
 
 <%= link_to '戻る', properties_path %>

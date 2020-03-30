@@ -8,6 +8,8 @@
     <td> <%= Property.human_attribute_name(:age) %> </td>
     <td> <%= Property.human_attribute_name(:remarks) %> </td>
     <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
     <% @properties.each do |property| %>
@@ -23,7 +25,12 @@
       </td>
       <td> <%=  property.remarks %> </td>
       <td>
-        <%= link_to property.name, property %>
+        <%= link_to '詳細', property %>
+      </td>
+      <td>
+        <%= link_to '編集', edit_property_path(property) %>
+      </td>
+      <td>
       </td>
       <% end %>
   </tr>
