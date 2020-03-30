@@ -1,5 +1,32 @@
 <h1 class="index_title">一覧</h1>
 
+<table>
+  <tr>
+    <td> <%= Property.human_attribute_name(:name) %> </td>
+    <td> <%= Property.human_attribute_name(:rent) %></td>
+    <td> <%= Property.human_attribute_name(:address) %> </td>
+    <td> <%= Property.human_attribute_name(:age) %> </td>
+    <td> <%= Property.human_attribute_name(:remarks) %> </td>
+    <td></td>
+  </tr>
+  <tr>
+    <% @properties.each do |property| %>
+      <td> <%=  property.name %> </td>
+      <td>
+        <%=  property.rent %>
+        <br>円
+      </td>
+      <td> <%=  property.address %> </td>
+      <td>
+        <%=  property.age %>
+        <br>年
+      </td>
+      <td> <%=  property.remarks %> </td>
+      <td>
+      </td>
+      <% end %>
+  </tr>
+</table>
 
 
 
