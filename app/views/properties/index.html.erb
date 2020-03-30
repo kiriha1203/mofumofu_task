@@ -1,0 +1,45 @@
+<h1 class="index_title">物件一覧</h1>
+
+<table>
+  <tr>
+    <td> <%= Property.human_attribute_name(:name) %> </td>
+    <td> <%= Property.human_attribute_name(:rent) %></td>
+    <td> <%= Property.human_attribute_name(:address) %> </td>
+    <td> <%= Property.human_attribute_name(:age) %> </td>
+    <td> <%= Property.human_attribute_name(:remarks) %> </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <% @properties.each do |property| %>
+      <td> <%=  property.name %> </td>
+      <td>
+        <%=  property.rent.to_s(:delimited) %>
+        <br>円
+      </td>
+      <td> <%=  property.address %> </td>
+      <td>
+        <%=  property.age %>
+        <br>年
+      </td>
+      <td> <%=  property.remarks %> </td>
+      <td>
+        <%= link_to '詳細', property %>
+      </td>
+      <td>
+        <%= link_to '編集', edit_property_path(property) %>
+      </td>
+      <td>
+        <%= link_to '削除', property, method: :delete,
+                    data: { confirm: "物件「#{property.name}」を削除します。よろしいですか？ "} %>
+      </td>
+      <% end %>
+  </tr>
+</table>
+
+
+
+
+
+<%= link_to '物件を登録する', new_property_path %>
