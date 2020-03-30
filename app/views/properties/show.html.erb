@@ -1,0 +1,12 @@
+<h1>閲覧</h1>
+
+<div class="property_show">
+  <%= Property.human_attribute_name(:name) %>:<%= @property.name %>
+  <%= Property.human_attribute_name(:rent) %>:<%= @property.rent.to_s(:delimited) %>円
+  <%= Property.human_attribute_name(:address) %>:<%= @property.address %>
+  <%= Property.human_attribute_name(:age) %><%= @property.age %>年
+  <%= Property.human_attribute_name(:remarks) %><%= simple_format(h(@property.remarks),
+                                                              {}, sanitize: false, wrapper_tag: "div") %>
+</div>
+
+<%= link_to '戻る', properties_path %>

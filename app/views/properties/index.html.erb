@@ -1,4 +1,4 @@
-<h1 class="index_title">一覧</h1>
+<h1 class="index_title">物件一覧</h1>
 
 <table>
   <tr>
@@ -13,7 +13,7 @@
     <% @properties.each do |property| %>
       <td> <%=  property.name %> </td>
       <td>
-        <%=  property.rent %>
+        <%=  property.rent.to_s(:delimited) %>
         <br>円
       </td>
       <td> <%=  property.address %> </td>
@@ -23,6 +23,7 @@
       </td>
       <td> <%=  property.remarks %> </td>
       <td>
+        <%= link_to property.name, property %>
       </td>
       <% end %>
   </tr>
