@@ -35,7 +35,7 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
-    property.destroy
+    @property.destroy
     redirect_to properties_url, notice: "物件「#{@property.name}」を削除しました。"
   end
 
