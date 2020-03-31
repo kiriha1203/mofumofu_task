@@ -1,19 +1,19 @@
 <h1>閲覧</h1>
 
 <div class="property_show">
-  物件名:<%= @property.name %>
-  賃料:<%= @property.rent.to_s(:delimited) %>円
-  住所:<%= @property.address %>
-  築年数 <%= @property.age %>年
-  備考 <%= simple_format(h(@property.remarks), {}, sanitize: false, wrapper_tag: "div") %>
+  <li class="property_list"> 物件名:<%= @property.name %> </li>
+  <li class="property_list"> 賃料:<%= @property.rent.to_s(:delimited) %>円 </li>
+  <li class="property_list"> 住所:<%= @property.address %> </li>
+  <li class="property_list"> 築年数 <%= @property.age %>年 </li>
+  <li class="property_list"> 備考 <%= simple_format(h(@property.remarks), {}, sanitize: false, wrapper_tag: "div") %> </li>
 </div>
 
 <div class="place_show">
   <% @property.places.each_with_index do |place, index| %>
     <h2>最寄り駅<%= index + 1 %></h2>
-    路線名 <%= place.route_name %>
-    駅名 <%= place.station_name %>
-    徒歩分数 <%= place.distance %>分
+    <li class="place_list"> 路線名 <%= place.route_name %> </li>
+    <li class="place_list"> 駅名 <%= place.station_name %> </li>
+    <li class="place_list"> 徒歩分数 <%= place.distance %>分 </li>
   <% end %>
 </div>
 
