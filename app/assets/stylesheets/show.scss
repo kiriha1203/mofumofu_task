@@ -1,0 +1,23 @@
+.property_show {
+  display: list-item;
+  list-style-type: none;
+  padding: 0.5em;
+  border-bottom: solid 1px black;
+
+  .property_list {
+    margin-left: 20px;
+    margin-bottom: 5px;
+  }
+}
+
+
+.place_show {
+  display: list-item;
+  list-style-type: none;
+  padding: 0.5em;
+
+  .place_list {
+    margin-left: 20px;
+    margin-bottom: 5px;
+  }
+}

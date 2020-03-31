@@ -12,51 +12,51 @@
 
 
   <div class="form-group">
-    <%= f.label :name %>
+    物件名
     <br>
     <%= f.text_field :name, class: 'form-control', id: 'property_name' %>
   </div>
   <div class="form-group">
-    <%= f.label :rent %>
+    賃料
     <br>
     <%= f.number_field :rent, class: 'form-control', id: 'property_rent' %>円
   </div>
   <div class="form-group">
-  <%= f.label :address %>
-  <br>
-  <%= f.text_field :address, class: 'form-control', id: 'property_address' %>
+    住所
+    <br>
+    <%= f.text_field :address, class: 'form-control', id: 'property_address' %>
   </div>
   <div class="form-group">
-  <%= f.label :age %>
-  <br>
-  <%= f.number_field :age, class: 'form-control', id: 'property_age' %>年
+    築年数
+    <br>
+    <%= f.number_field :age, class: 'form-control', id: 'property_age' %>年
   </div>
   <div class="form-group">
-  <%= f.label :remark %>
-  <br>
-  <%= f.text_area :remarks, rows: 5,  class: 'form-control', id: 'property_remark' %>
+    備考
+    <br>
+    <%= f.text_area :remarks, rows: 5,  class: 'form-control', id: 'property_remark' %>
   </div>
 
   <% property.places.each_with_index do |place, index| %>
     <%= f.fields_for :places, place do |i| %>
       <h2>最寄り駅<%= index + 1 %></h2>
       <div class="form-group">
-        <%= i.label :route_name %>
+        路線名
         <br>
         <%= i.text_field :route_name, class: 'form-control', id: 'place_route_name' %>
       </div>
       <div class="form-group">
-       <%= i.label :station_name %>
+        駅名
         <br>
        <%= i.text_field :station_name, class: 'form-control', id: 'place_station_name' %>
       </div>
       <div class="form-group">
-        <%= i.label :distance %>
+        徒歩分数
         <br>
        <%= i.number_field :distance, class: 'form-control', id: 'place_distance' %>分
       </div>
     <% end %>
   <% end %>
 
-  <%= f.submit nil %>
+  <%= f.submit %>
 <% end %>

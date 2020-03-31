@@ -1,0 +1,38 @@
+.property_names {
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.property_table {
+  padding-right: 5px;
+}
+
+.property_name {
+  width: 57px;
+  word-wrap: break-word;
+}
+
+.property_rent {
+  width: 57px;
+  word-wrap: break-word;
+}
+
+.property_address {
+  width: 95px;
+  word-wrap: break-word;
+}
+
+.property_age {
+  width: 41px;
+  word-wrap: break-word;
+}
+
+.property_remarks {
+  width: calc(90vw - 270px);
+  word-wrap: break-word;
+}
+
+.property_show_edit_delete {
+  width: 23px;
+  word-wrap: break-word;
+}
